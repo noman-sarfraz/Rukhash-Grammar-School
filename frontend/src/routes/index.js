@@ -45,6 +45,7 @@ function MainRoutes() {
   return (
     <Router>
       <Routes>
+        {/* <Route path="/" element={<Navigate to='/admin' />} /> */}
         <Route element={<AdminAuth />}>
           <Route path="admin/" element={<MainLayout />}>
             <Route index element={<Dashboard />} />
@@ -85,9 +86,10 @@ function MainRoutes() {
           </Route>
         </Route>
         <Route path="/" element={<DefaultLayout />}>
-          <Route index element={<NotFound />} />
+          <Route index element={<Navigate to="/admin" />} />
           <Route path="/login" element={<Login />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

@@ -37,7 +37,7 @@ function Dashboard() {
     return <h1>Loading...</h1>;
   }
   if (isError || isError2 || !isSuccess2 || !isSuccess) {
-    return <h1>rError: Couldn't Fetch Data.</h1>;
+    return <h1>Error: Couldn't Fetch Data.</h1>;
   }
   return (
     <Box>
