@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;1,100;1,200;1,300;1,600&display=swap");
+
+.custom-table {
+  font-size: 12px;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  font-family: Poppins;
+  width: 100%;
+}
+
+table.custom-table td,
+th {
+  /* border: 1px solid #dddddd; */
+  text-align: left;
+  padding: 4px 8px 4px 8px;
+}
+
+table.custom-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+table.custom-table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+table.custom-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto !important;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.css-cephhr-MuiButtonBase-root-MuiMenuItem-root {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.css-19dqudy-MuiTypography-root {
+  /* line-height: 2 !important; */
+}
+
+.css-cephhr-MuiButtonBase-root-MuiMenuItem-root {
+  font-size: 12px !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  font-size: 12px !important;
+}

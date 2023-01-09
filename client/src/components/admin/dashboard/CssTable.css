@@ -1,0 +1,30 @@
+.custom-table {
+  font-size: 12px;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  font-family: Poppins;
+  width: 100%;
+}
+
+table.custom-table td,
+th {
+  /* border: 1px solid #dddddd; */
+  text-align: left;
+  padding: 4px 8px 4px 8px;
+}
+
+table.custom-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+table.custom-table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+table.custom-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.table-container {
+  /* width: 100%; */
+  overflow-x: auto !important;
+}
