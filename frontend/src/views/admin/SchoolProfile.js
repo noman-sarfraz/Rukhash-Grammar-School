@@ -12,6 +12,7 @@ import {
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import StyledLoadingButton from "../../components/styled/StyledLoadingButton";
+import CircularLoader from "../../components/Loaders/CircularLoader";
 
 const selectOptions = {
   booleans: ["No", "Yes"],
@@ -44,7 +45,7 @@ function SchoolProfile() {
     }
   };
 
-  if (isGSLoading) return <h1>Loading...</h1>;
+  if (isGSLoading) return <CircularLoader />;
   if (isGSError || !isGSSuccess || !GSdata.school)
     return <h1>Error: Couldn't fetch school data!</h1>;
   let school = GSdata.school;

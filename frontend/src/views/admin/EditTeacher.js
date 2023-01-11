@@ -16,6 +16,7 @@ import {
   useUpdateTeacherMutation,
 } from "../../features/teachers/teachersApiSlice";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import CircularLoader from "../../components/Loaders/CircularLoader";
 
 const selectOptions = {
   branches: ["Rukhash Grammar School"],
@@ -56,7 +57,7 @@ function EditTeacher() {
     }
   };
 
-  if (isGTLoading) return <h1>Loading...</h1>;
+  if (isGTLoading) return <CircularLoader />;
   if (isGTError || !isGTSuccess || !GTdata.teacher)
     return <h1>Error: Couldn't fetch teacher data!</h1>;
   let teacher = GTdata.teacher;

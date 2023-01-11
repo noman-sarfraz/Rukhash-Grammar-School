@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import TeachersListContents from "../../components/admin/teachers/TeachersListContents";
 import StyledButton from "../../components/styled/StyledButton";
 import AddIcon from "@mui/icons-material/Add";
+import CircularLoader from "../../components/Loaders/CircularLoader";
 function TeachersList() {
   const { data, isLoading, isSuccess, isError, error } =
     useGetAllTeachersQuery();
@@ -17,7 +18,7 @@ function TeachersList() {
 
   let teachers;
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <CircularLoader />;
   }
   if (isError) {
     console.log(error);

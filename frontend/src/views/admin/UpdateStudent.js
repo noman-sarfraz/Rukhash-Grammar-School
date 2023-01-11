@@ -19,6 +19,7 @@ import {
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import StyledLoadingButton from "../../components/styled/StyledLoadingButton";
+import CircularLoader from "../../components/Loaders/CircularLoader";
 
 const selectOptions = {
   classes: [
@@ -78,7 +79,7 @@ function UpdateStudent() {
     }
   };
 
-  if (isGSLoading) return <h1>Loading...</h1>;
+  if (isGSLoading) return <CircularLoader />;
   if (isGSError || !isGSSuccess || !GSdata.student)
     return <h1>Error: Couldn't fetch student data!</h1>;
   let student = GSdata.student;

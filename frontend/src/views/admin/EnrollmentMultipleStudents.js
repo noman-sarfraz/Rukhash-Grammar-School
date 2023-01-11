@@ -8,6 +8,7 @@ import StyledButton from "../../components/styled/StyledButton";
 import { useGetLastStudentsQuery } from "../../features/students/studentsApiSlice";
 import { toast } from "react-toastify";
 import RegNoSuggestion from "../../utils/RegNoSuggestion";
+import CircularLoader from "../../components/Loaders/CircularLoader";
 
 const selectOptions = {
   classes: [
@@ -44,7 +45,7 @@ function EnrollmentMultipleStudents() {
 
   let latestStudent, lastStudents;
   
-  if (isLSloading) return <h1>Loading...</h1>;
+  if (isLSloading) return <CircularLoader />;
   if (isLSError) {
     toast.error("Error: Couldn't fetch last added student!");
     return <h1>Error</h1>;

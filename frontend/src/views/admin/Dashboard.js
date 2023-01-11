@@ -17,6 +17,7 @@ import RecentFeeCollection from "../../components/admin/Tables/RecentFeeCollecti
 import RecentExpense from "../../components/admin/Tables/RecentExpense";
 import { useGetAllTeachersQuery } from "../../features/teachers/teachersApiSlice";
 import { useGetAllStudentsQuery } from "../../features/students/studentsApiSlice";
+import CircularLoader from "../../components/Loaders/CircularLoader";
 
 function Dashboard() {
   const theme = useTheme();
@@ -34,7 +35,7 @@ function Dashboard() {
   } = useGetAllTeachersQuery();
 
   if (isLoading || isLoading2) {
-    return <h1>Loading...</h1>;
+    return <CircularLoader />
   }
   if (isError || isError2 || !isSuccess2 || !isSuccess) {
     return <h1>Error: Couldn't Fetch Data.</h1>;

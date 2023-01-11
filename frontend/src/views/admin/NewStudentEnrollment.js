@@ -27,6 +27,7 @@ import { useGetLastStudentsQuery } from "../../features/students/studentsApiSlic
 import { toast } from "react-toastify";
 import Asterisk from "../../components/common/Asterisk";
 import RegNoSuggestion from "../../utils/RegNoSuggestion";
+import CircularLoader from "../../components/Loaders/CircularLoader";
 
 const selectOptions = {
   classes: [
@@ -87,7 +88,7 @@ function NewStudentEnrollment() {
     }    
   };
 
-  if (isLSloading) return <h1>Loading...</h1>;
+  if (isLSloading) return <CircularLoader />;
   if (isLSError) {
     toast.error("Error: Couldn't fetch last added student!");
     return <h1>Error</h1>;

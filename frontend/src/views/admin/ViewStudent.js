@@ -10,13 +10,14 @@ import studentProfilePic from "./../../assets/studentProfilePic.gif";
 import FeePendingVouchers from "../../components/admin/Tables/FeePendingVouchers";
 import { useParams } from "react-router-dom";
 import { useGetStudentQuery } from "../../features/students/studentsApiSlice";
+import CircularLoader from "../../components/Loaders/CircularLoader";
 
 function ViewStudent() {
     const { id } = useParams();
     const { data, isLoading, isError, isSuccess, error } =
       useGetStudentQuery(id);
     if (isLoading) {
-      return <h1>Loading...</h1>;
+      return <CircularLoader />;
     }
     if (isError || !data.student) {
       console.log(error);

@@ -10,12 +10,13 @@ import ProfilePicture from "../../assets/studentProfilePic.gif";
 import { useGetTeacherQuery } from "../../features/teachers/teachersApiSlice";
 import { useParams } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
+import CircularLoader from "../../components/Loaders/CircularLoader";
 
 function ViewTeacher() {
   const { id } = useParams();
   const { data, isLoading, isError, isSuccess, error } = useGetTeacherQuery(id);
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <CircularLoader />;
   }
   if (isError || !data.teacher) {
     console.log(error);

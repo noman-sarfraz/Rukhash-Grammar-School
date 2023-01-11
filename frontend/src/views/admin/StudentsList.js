@@ -8,6 +8,7 @@ import StyledTextField from "../../components/styled/StyledTextField";
 import AddIcon from "@mui/icons-material/Add";
 import { useGetAllStudentsQuery } from "../../features/students/studentsApiSlice";
 import StudentsListContents from "../../components/admin/students/StudentsListContents";
+import CircularLoader from "../../components/Loaders/CircularLoader";
 
 function StudentsList() {
   const { data, isLoading, isSuccess, isError, error } =
@@ -15,7 +16,7 @@ function StudentsList() {
 
   let students;
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <CircularLoader />;
   }
   if (isError) {
     console.log(error);
