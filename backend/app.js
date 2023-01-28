@@ -27,10 +27,28 @@ app.get("/", (req, res) => {
   res.send("rukhash api");
 });
 
+app.get("/b/ITZH", (req, res) => {
+  res.status(200).json({
+    status: "True",
+    data: {
+      timelines: [1, 2, 44, 555, 0, 0],
+      masks: ["Are", "Are", "you", "HIGH", "you", "HIGH"],
+      action_plan: {
+        operation: "FOO",
+        sub_operations: {
+          Are: "BAR",
+          you: "FOX",
+          HIGH: "BAR",
+        },
+      },
+    },
+  });
+});
+
 app.use("/api/v1/", authRoutes);
-app.use("/api/v1/students", authenticateUser, studentRoutes); // 
+app.use("/api/v1/students", authenticateUser, studentRoutes); //
 app.use("/api/v1/teachers", authenticateUser, teacherRoutes); //
-app.use("/api/v1/admins", authenticateUser, adminRoutes); // 
+app.use("/api/v1/admins", authenticateUser, adminRoutes); //
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
